@@ -1,0 +1,14 @@
+*** Settings ***
+Library           RPA.Excel.Files
+Library           RPA.Browser.Selenium
+
+*** Keywords ***
+Login
+    Open Browser    https://test.salesforce.com/    gc    options=add_argument("--disable-notifications")
+    Maximize Browser Window
+    Delete All Cookies
+    Wait Until Element Is Visible    //input[@id='username']    30s
+    Input Text    //input[@id='username']    gurur.marimuthu@vodafoneziggo.com.testcon
+    Input Text    //input[@id='password']    Jan@2022$
+    Click Button When Visible    //input[@id='Login']
+    Sleep    25s
